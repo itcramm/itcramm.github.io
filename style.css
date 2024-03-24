@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
   }
-  
+
   #blob {
     width: 500px;
     height: 500px;
@@ -13,57 +13,863 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-image: linear-gradient(to top right, rgb(234, 234, 234), rgb(230, 211, 184), #e59b56, #e08655);
-    animation: blobAnimation 10s ease-in-out infinite, animate 5s ease-in-out infinite;
+    animation: blobAnimation 10s ease-in-out infinite, animate 5s ease-in-out infinite, ease-in ;
     z-index: 1;
     box-shadow: 0 0 30px 20px rgba(219, 153, 99, 0.634);
   }
 
+  a
+  {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+
   #image
   {
-    height:100%;
-    width: 100%;
+    height:100svh;
+    width:100svw;
     z-index: 2;
     opacity: 0.9;
     position: absolute;
     filter: brightness(0.1);
+    top:0;
   }
+
+  h1
+  {
+    font-family: "Hind Vadodara", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color:#FFFFFF;
+    z-index: 3;
+    position: relative;
+    text-align: center;
+    font-size: 3.5rem;
+    left: 0;
+    -webkit-animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+  #heading
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    position:relative;
+    top:0px
+}
+
+#navbar
+{
+  position: absolute;
+  z-index: 3;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction:column;
+  gap: 40px;
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:1rem;
+  letter-spacing: 0.2px;
+  top: -2%;
+  left: 10px;
+  width: 200px;
+}
+
+#other
+{
+  position: absolute;
+  -webkit-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation-delay: 0.2s;
+}
+
+#about
+{
+  position: absolute;
+  -webkit-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#about:after
+{
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.748);
+  z-index: 3;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0px;
+  transition: 0.3s;
+}
+
+#about:hover
+{
+  color: white;
+}
+
+#about:hover::after
+{
+  width: 102px;
+  box-shadow: 0px -10px 30px 10px rgba(255, 255, 255, 0.355);
+}
+
+#other:after
+{
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.748);
+  z-index: 3;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0px;
+  transition: 0.3s;
+}
+
+#other:hover
+{
+  color: white;
+}
+
+#other:hover::after
+{
+  width: 180px;
+  box-shadow: 0px -10px 30px 10px rgba(255, 255, 255, 0.355);
+}
+
+.theory_img
+{
+  display: none;
+}
+
+#theory:hover .theory_img 
+{
+  display: block; 
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 33%;
+  position: absolute;
+  transition:ease-in;
+  opacity: 0.6;
+}
+
+.practical_img
+{
+  display: none;
+}
+
+#practical:hover .practical_img 
+{
+  display: block; 
+  width: 40%;
+  left: 27%;
+  top: 34%;
+  position: absolute;
+  transition:ease-in;
+  opacity: 0.6;
+}
+
+h3
+{
+  position: relative;
+  text-align: center;
+  font-family: "Encode Sans Expanded", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 27pt;
+}
+
+#theory:hover
+{
+  background-color: black;
+  border: solid 3px #3f4cda;
+  transition: 0.2s;
+  box-shadow: 0 0 40px -10px rgba(210, 210, 210, 0.478);
+}
+
+#practical:hover
+{
+  background-color: black;
+  border: solid 3px #3f4cda;
+  transition: 0.2s;
+  box-shadow: 0 0 40px -10px rgba(210, 210, 210, 0.478);
+}
+
+@media (min-width: 1500px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  left: 20%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  right: 20%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+}
+@media (max-width: 1499px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  left: 19%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  right: 19%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+}
+
+@media (max-width: 1399px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  left: 17.5%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  right: 17.5%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+}
+
+@media (max-width: 1299px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  left: 15.5%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  right: 15.5%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+}
+
+@media (max-width: 1199px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  left: 12.5%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  right: 12.5%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+}
+
+@media (max-width: 1099px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  left: 9%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  right: 9%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+}
+
+@media (max-width: 999px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  left: 4.5%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 400px;
+  border-radius: 30px;
+  top:45%;
+  right: 4.5%;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+}
+
+@media (max-width: 899px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 370px;
+  border-radius: 30px;
+  top:45%;
+  left: 0;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 300px;
+  width: 370px;
+  border-radius: 30px;
+  top:45%;
+  right: 0;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+}
+
+@media (max-width: 799px)
+{
+#theory
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 250px;
+  width: 340px;
+  border-radius: 30px;
+  top:45%;
+  left: 0;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#theory:hover .theory_img 
+{
+  display: block; 
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 37%;
+  position: absolute;
+  transition:ease-in;
+  opacity: 0.6;
+}
+
+#practical
+{
+  position: absolute;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 250px;
+  width: 340px;
+  border-radius: 30px;
+  top:45%;
+  right: 0;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical:hover .practical_img 
+{
+  display: block; 
+  width: 40%;
+  left: 27%;
+  top: 37%;
+  position: absolute;
+  transition:ease-in;
+  opacity: 0.6;
+}
+}
+
+@media (max-width: 699px)
+{
+#theory
+{
+  position: relative;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 200px;
+  width: 300px;
+  border-radius: 30px;
+  top:120px;
+  margin: 0 auto;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#theory:hover .theory_img 
+{
+  display: block; 
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 45%;
+  position: absolute;
+  transition:ease-in;
+  opacity: 0.6;
+}
+
+#practical
+{
+  position: relative;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 200px;
+  width: 300px;
+  border-radius: 30px;
+  top:170px;
+  margin: 0 auto;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical:hover .practical_img 
+{
+  display: block; 
+  height: 50%;
+  left: 25%;
+  top: 45%;
+  position: absolute;
+  transition:ease-in;
+  opacity: 0.6;
+}
+
+#heading
+{
+  position: absolute;
+  top:-50px;
+  right: 5px;
+}
+
+h3 
+{
+  top:30px;
+  font-size: 30pt;
+}
+
+}
+
+@media (max-width: 500px)
+{
+#theory
+{
+  position: relative;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 200px;
+  width: 300px;
+  border-radius: 30px;
+  top:100px;
+  margin: 0 auto;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#theory:hover .theory_img 
+{
+  display: block; 
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 45%;
+  position: absolute;
+  transition:ease-in;
+  opacity: 0.6;
+}
+
+#practical
+{
+  position: relative;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.582);
+  border: solid 3px #7781ea;
+  height: 200px;
+  width: 300px;
+  border-radius: 30px;
+  top: 170px;
+  margin: 0 auto;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#practical:hover .practical_img 
+{
+  display: block; 
+  height: 50%;
+  left: 25%;
+  top: 45%;
+  position: absolute;
+  transition:ease-in;
+  opacity: 0.6;
+}
+
+#heading
+{
+  position: relative;
+  top:25px;
+  margin: 0 auto;
+}
+
+#blob
+{
+  width: 70%;
+  height: 50%;
+}
+
+#navbar
+{
+  position: absolute;
+  z-index: 3;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction:row;
+  gap: 130px;
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:1rem;
+  letter-spacing: 0.2px;
+  top: -2%;
+  left: 10px;
+  width: 100svw;
+}
+
+}
   
   @keyframes animate {
     from { background-position: 0 0; }
     to { background-position: 400px 0px 400px; }
   }
   
-  @keyframes blobAnimation {
-    0% {
+  @keyframes blobAnimation 
+  {
+    0% 
+    {
       border-radius: 33% 79% 21% 67%;
     }
   
-    15% {
+    15% 
+    {
       border-radius: 33% 93% 7% 67%;
     }
   
-    30% {
+    30% 
+    {
       border-radius: 50% 50% 80% 20% / 33% 32% 68% 67%;
     }
   
-    45% {
+    45% 
+    {
       border-radius: 50% 50% 85% 15% / 68% 32% 68% 32%;
     }
   
-    60% {
+    60% 
+    {
       border-radius: 72% 85% 15% / 16% 32% 68% 84%;
     }
   
-    75% {
+    75% 
+    {
       border-radius: 83% 17% 85% 15% / 40% 32% 68% 60%;
     }
   
-    90% {
+    90% 
+    {
       border-radius: 83% 17% 9% 91% / 16% 32% 68% 84%;
     }
   
-    100% {
+    100% 
+    {
       border-radius: 33% 79% 21% 67%;
     }
   }
-  
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-3-23 19:34:5
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-ver-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes scale-in-ver-bottom {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-ver-bottom {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-3-23 19:37:16
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-hor-left
+ * ----------------------------------------
+ */
+ @-webkit-keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-3-23 21:34:5
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-center
+ * ----------------------------------------
+ */
+ @-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
